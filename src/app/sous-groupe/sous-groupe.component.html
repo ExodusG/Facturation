@@ -1,4 +1,4 @@
-<table #innerTables mat-table [dataSource]="sousGroupes" multiTemplateDataRows>
+<table #innerTables mat-table [dataSource]="data" multiTemplateDataRows>
   <ng-container matColumnDef="designation">
     <td mat-cell *matCellDef="let sousGroupe">
       <div class="designation-group">
@@ -30,7 +30,13 @@
     </td>
 
   </ng-container>
+  <ng-container matColumnDef="add">
+    <th mat-header-cell *matHeaderCellDef> <strong>Add</strong> </th>
+    <td mat-cell *matCellDef="let sousgroupe">
+      <button mat-button (click)="addLigne(sousgroupe)" >Add lignes</button>
+    </td>
 
+  </ng-container>
   <ng-container matColumnDef="expandedDetail">
     <td mat-cell *matCellDef="let sousgroupe" [attr.colspan]="displayedColumns.length">
       <app-ligne [lignes]="sousgroupe.lignes" (ligne)="deleteLigne($event,sousgroupe)"></app-ligne>

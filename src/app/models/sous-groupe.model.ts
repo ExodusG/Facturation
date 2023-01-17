@@ -16,4 +16,7 @@ export class SousGroupe {
   deleteLigne(ligne: Ligne){
     this.lignes=this.lignes.filter((u)=>u !== ligne);
   }
+  addLigne(ligne : Ligne){
+    this.lignes.push(ligne);
+  }
 }

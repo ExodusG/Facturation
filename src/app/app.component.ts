@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {MatTableDataSource} from "@angular/material/table";
 import {Groupe} from "./models/groupe.model";
@@ -11,7 +11,7 @@ import {MatDialog} from "@angular/material/dialog";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnChanges{
   title = 'facturation';
   displayedColumns: string[] = ["designation", "qte", "unite", "pu", "total","remove","add"];
   /*form:FormGroup;*/
@@ -79,7 +79,12 @@ export class AppComponent implements OnInit{
       newData.push(groupe)
       this.data.data = newData
       console.log(this.data.data);
+
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
   }
 }
 
