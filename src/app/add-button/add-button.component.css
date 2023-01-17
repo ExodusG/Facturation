@@ -1,0 +1,11 @@
+.add-button{
+  display: flex;
+  flex-direction: column;
+  float: left;
+  min-width: 180px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: #e6e6e6;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}

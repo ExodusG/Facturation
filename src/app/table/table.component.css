@@ -1,12 +1,25 @@
-.designation-group {
-  display: flex;
- /* margin-left: 1em;*/
-  align-items: center;
-
+table {
+  width: 80em;
 }
 
-.designation-text {
-  margin: 0 0 0 1em;
+th.mat-header-cell {
+  text-align: center !important;
+}
+
+.mat-column-expandedDetail {
+  padding: 0 !important;
+}
+
+.mat-column-sousGroupes {
+  padding: 0 !important;
+}
+
+.mat-column-lignes {
+  padding: 0 !important;
+}
+
+.mat-header-cell {
+  border-right: 1px solid lightgray;
 }
 .mat-column-designation {
   width: 60%;
@@ -34,13 +47,27 @@
   border-top: 1px solid lightgray;
 
 }
+
+.designation-group {
+  display: flex;
+  align-items: center;
+
+}
+
+.designation-text {
+  margin: 0 0 0 1em !important;
+}
+
+
 .groupeChiffrage-row {
   height: 0;
 }
-.hidden {
-  display: none;
-}
+
 .groupeChiffrage-detail {
   overflow: hidden;
   /*display: flex;*/
+}
+
+.hidden {
+  display: none;
 }

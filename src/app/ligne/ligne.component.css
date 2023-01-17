@@ -1,0 +1,42 @@
+.mat-column-designation {
+  border-right: 1px solid lightgray;
+}
+.mat-column-qte {
+  border-right: 1px solid lightgray;
+}
+.designation-group {
+  display: flex;
+  /* margin-left: 1em;*/
+  align-items: center;
+
+}
+
+.designation-text {
+  margin: 0 0 0 1em;
+}
+.mat-column-designation {
+  width: 60%;
+  border-top: 1px solid lightgray;
+}
+.mat-column-qte {
+  width: 8%;
+  border-top: 1px solid lightgray;
+
+}
+.mat-column-unite {
+  width: 8%;
+  border-right: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+}
+.mat-column-pu {
+  width: 12%;
+  border-right: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+
+}
+.mat-column-total {
+  width: 12%;
+  border-right: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+
+}

@@ -1,24 +1,33 @@
-import {SousGroupe} from "./sous-groupe.model";
+import {Ligne} from "./ligne.model";
 
 export class Groupe {
 
   designation: string;
-  sous_groupes: SousGroupe[];
-
-  constructor(designation: string, sous_groupes: SousGroupe[]) {
+  sousGroupes: Groupe[];
+  lignes: Ligne[];
+  constructor(designation: string, sous_groupes: Groupe[],lignes : Ligne[]) {
     this.designation = designation;
-    this.sous_groupes = sous_groupes;
+    this.sousGroupes = sous_groupes;
+    this.lignes=lignes;
   }
 
-  get total() {
-    return this.sous_groupes.reduce((total, sous_groupe) => total + sous_groupe.total, 0);
+  get total() : number{
+    return this.sousGroupes.reduce((total, groupe) => total + groupe.total, 0) + this.lignes.reduce((total, ligne) => total + ligne.total, 0);
   }
 
-  deleteSousGroupe(sousGroupe: SousGroupe){
-    this.sous_groupes=this.sous_groupes.filter((u)=>u !== sousGroupe);
+  deleteSousGroupe(sousGroupe: Groupe){
+    this.sousGroupes=this.sousGroupes.filter((u)=>u !== sousGroupe);
   }
 
-  pushSousGroupe(sousGroupe:SousGroupe){
-    this.sous_groupes.push(sousGroupe);
+  pushSousGroupe(sousGroupe:Groupe){
+    this.sousGroupes.push(sousGroupe);
+  }
+
+  deleteLigne(ligne: Ligne){
+    this.lignes=this.lignes.filter((u)=>u !== ligne);
+  }
+
+  addLigne(ligne : Ligne){
+    this.lignes.push(ligne);
   }
 }
