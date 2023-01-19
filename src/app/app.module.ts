@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from "@angular/material/table";
 import {MatInputModule} from "@angular/material/input";
-import { SousGroupeComponent } from './sous-groupe/sous-groupe.component';
 import { LigneComponent } from './ligne/ligne.component';
 import { DialogNameComponent } from './dialog-name/dialog-name.component';
 import {MatDialogModule} from "@angular/material/dialog";
@@ -20,7 +19,6 @@ import {MatButtonModule} from "@angular/material/button";
 @NgModule({
   declarations: [
     AppComponent,
-    SousGroupeComponent,
     LigneComponent,
     DialogNameComponent,
     TableComponent,

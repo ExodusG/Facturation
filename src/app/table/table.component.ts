@@ -24,19 +24,20 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   ],
 })
 export class TableComponent implements OnInit, OnChanges{
-  show:boolean=false;
+  showAddIndex : number = -1;
   collapsedElements: Groupe[] = [];
-  displayedColumns: string[] = ["designation", "qte", "unite", "pu", "total","remove","add"];
+  displayedColumns: string[] = ["designation", "qte", "unite", "pu", "total","action"];
   data: MatTableDataSource<Groupe> = new MatTableDataSource<Groupe>();
-  /*form:FormGroup;*/
-  @Input() groupes!: Groupe[];
+
+  @Input() groupes?: Groupe[];
+  @Input() sousGroupes ?: Groupe[];
   private designation: string="";
   constructor(public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
-       this.data.data=this.groupes
-    }
+    this.data.data = this.groupes ?? this.sousGroupes ?? [];
+  }
 
   remove(element : Groupe){
     this.data.data=this.data.data.filter((u)=>u !== element);
@@ -46,12 +47,10 @@ export class TableComponent implements OnInit, OnChanges{
   deleteLigne(ligne: Ligne,groupe:Groupe){
     groupe.deleteLigne(ligne);
   }
-  showElement(){
-    this.show=! this.show;
+  showElement(index:number){
+    this.showAddIndex = this.showAddIndex === index ? -1 : index;
   }
-  deleteSousGroupe(sousGroupe : Groupe,element:Groupe){
-    element.deleteSousGroupe(sousGroupe);
-  }
+
   addLigne(sousGroupe: Groupe){
     const dialogRef = this.dialog.open(DialogNameComponent, {
       data: this.designation
@@ -72,13 +71,13 @@ export class TableComponent implements OnInit, OnChanges{
     });
   }
 
-  add(type:string, sousGroupe:Groupe){
+  add(type:string, sousGroupe:Groupe,index:number){
     if(type==="ligne") {
       this.addLigne(sousGroupe);
     }else if(type==="groupe"){
       this.addSousGroupe(sousGroupe);
     }
-    this.showElement();
+    this.showElement(index);
   }
   addSousGroupe(groupe:Groupe){
     const dialogRef = this.dialog.open(DialogNameComponent, {
@@ -108,6 +107,6 @@ export class TableComponent implements OnInit, OnChanges{
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.data.data=this.groupes;
+    this.data.data = this.groupes ?? this.sousGroupes ?? [];
   }
 }

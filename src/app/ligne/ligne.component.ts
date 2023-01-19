@@ -8,7 +8,7 @@ import {Ligne} from "../models/ligne.model";
   styleUrls: ['./ligne.component.css']
 })
 export class LigneComponent {
-  displayedColumns: string[] = ["designation", "qte", "unite", "pu", "total","remove"];
+  displayedColumns: string[] = ["designation", "qte", "unite", "pu", "total","action"];
   @Input() lignes!: Ligne[];
   @Output() ligne=new EventEmitter<Ligne>();
   delete(sousGroupe : Ligne){
