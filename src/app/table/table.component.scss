@@ -1,8 +1,4 @@
-table {
-  width: 80em;
-}
-
-th.mat-header-cell {
+th.mat-mdc-header-cell {
   text-align: center !important;
 }
 
@@ -18,7 +14,7 @@ th.mat-header-cell {
   padding: 0 !important;
 }
 
-.mat-header-cell {
+.mat-mdc-header-cell{
   border-right: 1px solid lightgray;
 }
 .mat-column-designation {
@@ -45,7 +41,12 @@ th.mat-header-cell {
   width: 12%;
   border-right: 1px solid lightgray;
   border-top: 1px solid lightgray;
+}
 
+.mat-column-action{
+  width: 8%;
+  border-right: 1px solid lightgray;
+  border-top: 1px solid lightgray;
 }
 
 .designation-group {

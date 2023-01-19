@@ -3,7 +3,7 @@ import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angula
 @Component({
   selector: 'app-add-button',
   templateUrl: './add-button.component.html',
-  styleUrls: ['./add-button.component.css']
+  styleUrls: ['./add-button.component.scss']
 })
 export class AddButtonComponent {
   @Output() addType =new EventEmitter<string>();

@@ -1,0 +1,26 @@
+.facturation{
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  width:100%;
+  align-items: center;
+}
+
+.facturation_body{
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  width:80%;
+  align-items: center;
+}
+
+.facturation_body_table{
+  width: 100%;
+}
+.facturation_body_bottom{
+  position: relative;
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

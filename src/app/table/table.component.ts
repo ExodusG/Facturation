@@ -9,7 +9,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css'],
+  styleUrls: ['./table.component.scss'],
   animations: [
     trigger('ligneExpand', [
       state('collapsed', style({height: '0px', minHeight: '0'})),

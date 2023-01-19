@@ -1,3 +1,10 @@
-<app-table [groupes]="data2" (sousGroupeEmit)="deleteGroupe($event)"></app-table>
-<button mat-button (click)="addGroupe()" >Add groupe</button>
-<app-montant [devis]="devis"></app-montant>
+<div class="facturation">
+  <div class="facturation_body">
+    <app-table class="facturation_body_table" [groupes]="data2" (sousGroupeEmit)="deleteGroupe($event)"></app-table>
+    <div class="facturation_body_bottom">
+      <button mat-raised-button color="primary" (click)="addGroupe()" >Add groupe</button>
+      <app-montant [devis]="devis"></app-montant>
+    </div>
+  </div>
+</div>
+

@@ -5,7 +5,7 @@ import {Ligne} from "../models/ligne.model";
 @Component({
   selector: 'app-ligne',
   templateUrl: './ligne.component.html',
-  styleUrls: ['./ligne.component.css']
+  styleUrls: ['./ligne.component.scss']
 })
 export class LigneComponent {
   displayedColumns: string[] = ["designation", "qte", "unite", "pu", "total","action"];
