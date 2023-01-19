@@ -1,2 +1,3 @@
-<app-table [groupes]="data2"></app-table>
+<app-table [groupes]="data2" (sousGroupeEmit)="deleteGroupe($event)"></app-table>
 <button mat-button (click)="addGroupe()" >Add groupe</button>
+<app-montant [devis]="devis"></app-montant>

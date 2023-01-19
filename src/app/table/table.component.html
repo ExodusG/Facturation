@@ -56,7 +56,7 @@
   <ng-container matColumnDef="sousGroupes">
     <td mat-cell *matCellDef="let groupe" [attr.colspan]="displayedColumns.length">
       <div  class="groupeChiffrage-detail" [@sousGroupeExpand]="!collapsedElements.includes(groupe) ? 'expanded' : 'collapsed'">
-        <app-table [sousGroupes]="groupe.sousGroupes" ></app-table>
+        <app-table (sousGroupeEmit)="deleteSousGroupe($event,groupe)" [sousGroupes]="groupe.sousGroupes" ></app-table>
       </div>
     </td>
   </ng-container>

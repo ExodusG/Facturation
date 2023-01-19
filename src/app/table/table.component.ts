@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Groupe} from "../models/groupe.model";
 import {MatTableDataSource} from "@angular/material/table";
 import {Ligne} from "../models/ligne.model";
@@ -31,6 +31,7 @@ export class TableComponent implements OnInit, OnChanges{
 
   @Input() groupes?: Groupe[];
   @Input() sousGroupes ?: Groupe[];
+  @Output() sousGroupeEmit =new EventEmitter<Groupe>();
   private designation: string="";
   constructor(public dialog: MatDialog) {
   }
@@ -39,9 +40,13 @@ export class TableComponent implements OnInit, OnChanges{
     this.data.data = this.groupes ?? this.sousGroupes ?? [];
   }
 
+  deleteSousGroupe(sousGroupe : Groupe,element:Groupe){
+    element.deleteSousGroupe(sousGroupe);
+  }
+
   remove(element : Groupe){
     this.data.data=this.data.data.filter((u)=>u !== element);
-
+    this.sousGroupeEmit.emit(element);
   }
 
   deleteLigne(ligne: Ligne,groupe:Groupe){

@@ -15,6 +15,7 @@ import {MatIconModule} from "@angular/material/icon";
 import { TableComponent } from './table/table.component';
 import { AddButtonComponent } from './add-button/add-button.component';
 import {MatButtonModule} from "@angular/material/button";
+import { MontantComponent } from './montant/montant.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MatButtonModule} from "@angular/material/button";
     LigneComponent,
     DialogNameComponent,
     TableComponent,
-    AddButtonComponent
+    AddButtonComponent,
+    MontantComponent
   ],
     imports: [
         BrowserModule,
