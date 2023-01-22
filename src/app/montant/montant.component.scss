@@ -1,0 +1,12 @@
+.montant{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.montant_ligne{
+  display: flex;
+  flex-direction: row;
+}
+.montant_ligne_nom{
+  padding-right: 10px;
+}

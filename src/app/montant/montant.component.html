@@ -1,3 +1,33 @@
-<p>{{devis.total}}</p>
-<p>{{devis.tva}}</p>
-<p>{{devis.totalTTC}}</p>
+<div class="montant">
+  <div class="montant_ligne">
+    <div class="montant_ligne_nom">
+      Montant total brut H.T.
+    </div>
+    <div class="montant_ligne_prix">
+      <strong>
+        {{devis.total}} CHF
+      </strong>
+    </div>
+  </div>
+  <div class="montant_ligne">
+    <div class="montant_ligne_nom">
+      TVA 7.7%
+    </div>
+    <div class="montant_ligne_prix">
+      <strong>
+        {{devis.tva}} CHF
+      </strong>
+    </div>
+  </div>
+  <div class="montant_ligne">
+    <div class="montant_ligne_nom">
+     Montant total net T.T.C arrondi
+    </div>
+    <div class="montant_ligne_prix">
+      <strong>
+        {{devis.totalTTC}} CHF
+      </strong>
+    </div>
+  </div>
+</div>
+

@@ -66,7 +66,7 @@ export class TableComponent implements OnInit, OnChanges{
 
       if(result){
         this.data.data=this.data.data.filter((u)=>u !== sousGroupe);
-        sousGroupe.addLigne(new Ligne(result,3,"",50));
+        sousGroupe.addLigne(new Ligne(result,0,"",0));
         let newData = [...this.data.data];
 
         newData.push(sousGroupe)
